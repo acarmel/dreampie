@@ -29,8 +29,9 @@
 import sys
 if sys.version_info[0] < 3:
     sys.setdefaultencoding('utf-8') #@UndefinedVariable
-import site
-site.main()
+if sys.version_info[0] == 3 and sys.version_info[1] < 6:
+    import site
+    site.main()
 
 from os.path import abspath, join, dirname
 
